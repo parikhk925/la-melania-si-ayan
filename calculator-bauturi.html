@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator Băuturi Petrecere — La Melania și Ayan</title>
+<meta name="description" content="Calculează câte sticle de vin, bere și spirtoase îți trebuie pentru petrecere, în funcție de numărul de invitați și durata evenimentului.">
+<link rel="icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="nav-wrap">
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo brand-wordmark">La Melania <span class="amp">&amp;</span> Ayan</a>
+    <div class="nav-links">
+      <a href="index.html">Acasă</a>
+      <a href="despre.html">Povestea Noastră</a>
+      <a href="meniu.html">Meniu</a>
+      <a href="evenimente.html">Evenimente</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-ghost btn-sm">Rezervă o masă</a>
+      <button class="nav-burger" aria-label="Meniu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</div>
+<div class="mobile-menu">
+  <a href="index.html">Acasă</a>
+  <a href="despre.html">Povestea Noastră</a>
+  <a href="meniu.html">Meniu</a>
+  <a href="evenimente.html">Evenimente</a>
+  <a href="galerie.html">Galerie</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-primary">Rezervă o masă</a>
+</div>
+
+<header class="page-hero">
+  <div class="hero-media"><img src="images/carafa.jpg" alt="Calculator băuturi petrecere"></div>
+  <div class="container hero-content">
+    <span class="eyebrow">Evenimente &amp; Petreceri</span>
+    <h1 class="hero-title">Calculator <em>Băuturi</em> Pentru Petrecere</h1>
+    <p class="hero-sub">Câte sticle de vin, bere și spirtoase ai nevoie pentru evenimentul tău? Câteva secunde și ai un răspuns.</p>
+  </div>
+</header>
+
+<!-- ================= DRINK CALCULATOR ================= -->
+<section class="section">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Calculator Băuturi</span>
+      <h2>Câte sticle îți trebuie pentru petrecere?</h2>
+      <p>O estimare rapidă a necesarului de vin, bere și spirtoase, în funcție de numărul de invitați și durata evenimentului.</p>
+    </div>
+    <div class="reveal calc-card">
+      <div>
+        <div class="calc-field">
+          <label for="calcGuests">Persoane care consumă alcool</label>
+          <input type="number" id="calcGuests" min="1" max="500" value="20">
+        </div>
+        <div class="calc-field">
+          <label for="calcHours">Durata petrecerii (ore)</label>
+          <input type="number" id="calcHours" min="1" max="24" value="4">
+        </div>
+        <div class="calc-slider-group">
+          <p>Preferință de consum — ajustează procentele:</p>
+          <div class="calc-slider-row">
+            <label>Vin <span id="calcWineVal">50%</span></label>
+            <input type="range" id="calcWine" min="0" max="100" value="50">
+          </div>
+          <div class="calc-slider-row">
+            <label>Bere <span id="calcBeerVal">30%</span></label>
+            <input type="range" id="calcBeer" min="0" max="100" value="30">
+          </div>
+          <div class="calc-slider-row">
+            <label>Spirtoase <span id="calcSpiritVal">20%</span></label>
+            <input type="range" id="calcSpirit" min="0" max="100" value="20">
+          </div>
+        </div>
+      </div>
+      <div class="calc-results">
+        <h4>Necesar Estimat</h4>
+        <div class="calc-results-grid">
+          <div class="calc-result-item"><strong id="calcOutWine">0</strong><span>sticle de vin</span></div>
+          <div class="calc-result-item"><strong id="calcOutBeer">0</strong><span>sticle de bere</span></div>
+          <div class="calc-result-item"><strong id="calcOutSpirit">0</strong><span>sticle de spirtoase</span></div>
+        </div>
+        <p class="calc-note">Estimare orientativă, pe baza unui consum moderat. Adaptăm oferta exactă discutând direct cu tine.</p>
+        <div class="calc-cta">
+          <a href="#" id="calcOrderBtn" class="btn btn-primary" target="_blank" rel="noopener">💬 Trimite Necesarul pe WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:28px;">
+      <a href="evenimente.html" class="btn btn-ghost">← Vezi toate băuturile pentru evenimente</a>
+    </p>
+  </div>
+</section>
+
+<section class="section--tight section--cream">
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
+    <div>
+      <h3 style="font-size:24px;">Ai nevoie de o ofertă exactă?</h3>
+      <p style="color:var(--ink-soft);margin-top:6px;">Scrie-ne pe WhatsApp cu detaliile evenimentului tău.</p>
+    </div>
+    <a href="https://wa.me/40751778967?text=Bună%2C%20aș%20dori%20o%20ofertă%20pentru%20un%20eveniment." class="btn btn-whatsapp" target="_blank" rel="noopener">💬 +40 751 778 967</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <span class="footer-watermark">La Melania &amp; Ayan</span>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><span class="brand-wordmark">La Melania <span class="amp">&amp;</span> Ayan</span></div>
+        <p style="font-size:14.5px;max-width:32ch;">Cafenea, bar de vinuri și bar în inima orașului Videle. Un loc cu un vibe aparte.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigare</h4>
+        <ul>
+          <li><a href="index.html">Acasă</a></li>
+          <li><a href="despre.html">Povestea Noastră</a></li>
+          <li><a href="meniu.html">Meniu</a></li>
+          <li><a href="evenimente.html">Evenimente</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Program</h4>
+        <ul>
+          <li>Luni – Duminică</li>
+          <li>07:00 – 24:00</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>Str. Băncii nr. 4, Videle, Teleorman</li>
+          <li><a href="tel:+40751778967">+40 751 778 967</a></li>
+          <li><a href="mailto:melanysolution2016@yahoo.com">melanysolution2016@yahoo.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 La Melania și Ayan. Toate drepturile rezervate.</span>
+      <span>Made with care in Videle.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/drink-calculator.js"></script>
+</body>
+</html>
