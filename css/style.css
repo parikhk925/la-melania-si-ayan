@@ -721,6 +721,35 @@ button{ font-family: inherit; cursor:pointer; }
 .menu-item-main{ display:flex; flex-direction:column; }
 .menu-item-name{ font-weight:600; font-size:16px; color: var(--cocoa-950); }
 .menu-item-desc{ font-size:13.5px; color: var(--ink-soft); margin-top:3px; }
+.menu-item-nutrition{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  gap: 4px 10px;
+  margin-top:8px;
+}
+.nutri-portion{
+  font-family: var(--font-body);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color: var(--cocoa-700);
+  background: var(--cream-soft);
+  border: 1px solid var(--cream-line);
+  border-radius: var(--radius-pill);
+  padding: 2px 9px;
+}
+.nutri-kcal{
+  font-family: var(--font-display);
+  font-weight:600;
+  font-size:13.5px;
+  color: var(--gold-dark);
+}
+.nutri-macros{
+  font-size:11.5px;
+  color: var(--ink-soft);
+}
 .menu-item-allergens{
   margin-top:5px;
   font-size:12px;

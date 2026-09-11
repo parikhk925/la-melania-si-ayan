@@ -1,43 +1,44 @@
-// Allergens are inferred from each item's actual stated ingredients/name —
-// not invented. Precise nutritional values (kcal, macros) are intentionally
-// NOT fabricated; see the disclaimer rendered under the menu instead.
+// Allergens: prefer the item's official `al` array (from the client's
+// nutrition document). Fall back to inference from ingredients only when
+// no official data exists for that item (snacks, extras, a couple of
+// wines not covered by the nutrition document).
 function inferAllergens(item) {
   const text = `${item.n} ${item.d || ""}`.toLowerCase();
   const tags = new Set();
-
   const has = (...words) => words.some((w) => text.includes(w));
 
-  if (
-    has(
-      "lapte",
-      "cappuccino",
-      "latte",
-      "macchiat",
-      "cioco",
-      "ciocolat",
-      "frappe",
-      "ice coffee",
-      "irish cappuccino"
-    )
-  )
+  if (has("lapte", "cappuccino", "latte", "macchiat", "cioco", "ciocolat", "frappe", "ice coffee", "irish cappuccino"))
     tags.add("Lapte");
-
   if (has("oreo", "sărățele", "saratele", "cașcaval", "cascaval")) {
     tags.add("Gluten");
     tags.add("Soia");
   }
-
   if (has("fistic", "arahide")) tags.add("Fructe cu coajă / Arahide");
-
   if (has("vin ", "vinul", "pétillant", "petiant")) tags.add("Sulfiți");
-
   if (has("bere", "birra", "cidru")) tags.add("Gluten");
-
   if (has("popping boba", "smoothie")) tags.add("Poate conține urme de fructe");
-
   if (has("miere")) tags.add("Poate conține urme de polen");
 
   return Array.from(tags);
+}
+
+function getAllergens(item) {
+  return Array.isArray(item.al) ? item.al : inferAllergens(item);
+}
+
+function fmtNum(n) {
+  return Number.isInteger(n) ? String(n) : String(n).replace(/\.?0+$/, "");
+}
+
+function renderNutrition(item) {
+  if (!item.nu) return "";
+  const { kcal, prot, carb, fat, sat, sugar, salt } = item.nu;
+  return `
+    <div class="menu-item-nutrition">
+      ${item.port ? `<span class="nutri-portion">${item.port}</span>` : ""}
+      <span class="nutri-kcal">${fmtNum(kcal)} kcal</span>
+      <span class="nutri-macros">P ${fmtNum(prot)}g · C ${fmtNum(carb)}g · G ${fmtNum(fat)}g (din care sat. ${fmtNum(sat)}g) · Zahăr ${fmtNum(sugar)}g · Sare ${fmtNum(salt)}g</span>
+    </div>`;
 }
 
 function renderMenuGroup(group, filterText) {
@@ -61,12 +62,13 @@ function renderMenuGroup(group, filterText) {
       <div class="menu-items">
         ${items
           .map((it) => {
-            const allergens = inferAllergens(it);
+            const allergens = getAllergens(it);
             return `
           <div class="menu-item">
             <div class="menu-item-main">
               <span class="menu-item-name">${it.n}</span>
               ${it.d ? `<span class="menu-item-desc">${it.d}</span>` : ""}
+              ${renderNutrition(it)}
               ${allergens.length ? `<span class="menu-item-allergens">Conține: ${allergens.join(", ")}</span>` : ""}
             </div>
           </div>`;
