@@ -267,10 +267,11 @@ button{ font-family: inherit; cursor:pointer; }
   width:100%; height:100%; object-fit:cover;
   filter: saturate(1.05) contrast(1.03);
 }
-.hero-media .hero-bg-video{ display:none; }
+.hero-media .hero-bg-video-desktop{ display:none; }
+.hero-media .hero-bg-video-mobile{ display:block; }
 @media (min-width: 769px){
-  .hero-media .hero-bg-video{ display:block; }
-  .hero-media .hero-bg-image{ display:none; }
+  .hero-media .hero-bg-video-desktop{ display:block; }
+  .hero-media .hero-bg-video-mobile{ display:none; }
 }
 .hero-media::after{
   content:"";
