@@ -1,4 +1,44 @@
-const fmtRON = (p) => (Number.isInteger(p) ? p : p.toFixed(2)).toString().replace(".", ",");
+// Allergens are inferred from each item's actual stated ingredients/name —
+// not invented. Precise nutritional values (kcal, macros) are intentionally
+// NOT fabricated; see the disclaimer rendered under the menu instead.
+function inferAllergens(item) {
+  const text = `${item.n} ${item.d || ""}`.toLowerCase();
+  const tags = new Set();
+
+  const has = (...words) => words.some((w) => text.includes(w));
+
+  if (
+    has(
+      "lapte",
+      "cappuccino",
+      "latte",
+      "macchiat",
+      "cioco",
+      "ciocolat",
+      "frappe",
+      "ice coffee",
+      "irish cappuccino"
+    )
+  )
+    tags.add("Lapte");
+
+  if (has("oreo", "sărățele", "saratele", "cașcaval", "cascaval")) {
+    tags.add("Gluten");
+    tags.add("Soia");
+  }
+
+  if (has("fistic", "arahide")) tags.add("Fructe cu coajă / Arahide");
+
+  if (has("vin ", "vinul", "pétillant", "petiant")) tags.add("Sulfiți");
+
+  if (has("bere", "birra", "cidru")) tags.add("Gluten");
+
+  if (has("popping boba", "smoothie")) tags.add("Poate conține urme de fructe");
+
+  if (has("miere")) tags.add("Poate conține urme de polen");
+
+  return Array.from(tags);
+}
 
 function renderMenuGroup(group, filterText) {
   const q = (filterText || "").trim().toLowerCase();
@@ -16,17 +56,23 @@ function renderMenuGroup(group, filterText) {
       ${sub.note ? `<p class="menu-subnote">${sub.note}</p>` : ""}
       <div class="menu-items">
         ${items
-          .map(
-            (it) => `
+          .map((it) => {
+            const allergens = inferAllergens(it);
+            return `
           <div class="menu-item">
             <div class="menu-item-main">
               <span class="menu-item-name">${it.n}</span>
               ${it.d ? `<span class="menu-item-desc">${it.d}</span>` : ""}
+              ${
+                allergens.length
+                  ? `<span class="menu-item-allergens">${allergens
+                      .map((a) => `<span class="allergen-tag">${a}</span>`)
+                      .join("")}</span>`
+                  : ""
+              }
             </div>
-            <span class="menu-item-dots"></span>
-            <span class="menu-item-price">${fmtRON(it.p)} <small>RON</small></span>
-          </div>`
-          )
+          </div>`;
+          })
           .join("")}
       </div>
     </div>`;

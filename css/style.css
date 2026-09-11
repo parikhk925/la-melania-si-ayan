@@ -681,7 +681,7 @@ button{ font-family: inherit; cursor:pointer; }
 }
 .menu-item{
   display:flex;
-  align-items:baseline;
+  align-items:flex-start;
   gap:10px;
   padding: 13px 0;
   border-bottom: 1px dashed var(--cream-line);
@@ -689,15 +689,18 @@ button{ font-family: inherit; cursor:pointer; }
 .menu-item-main{ display:flex; flex-direction:column; flex:1; min-width:0; }
 .menu-item-name{ font-weight:600; font-size:15.5px; color: var(--cocoa-950); }
 .menu-item-desc{ font-size:12.5px; color: var(--ink-soft); margin-top:2px; }
-.menu-item-dots{ flex:1; }
-.menu-item-price{
-  font-family: var(--font-display);
+.menu-item-allergens{ display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+.allergen-tag{
+  display:inline-block;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--cream-soft);
+  border: 1px solid var(--cream-line);
+  font-size: 10.5px;
   font-weight:600;
-  font-size:15.5px;
-  color: var(--gold-dark);
-  white-space:nowrap;
+  color: var(--cocoa-700);
+  letter-spacing:.02em;
 }
-.menu-item-price small{ font-size:10px; font-weight:600; opacity:.7; }
 @media (max-width: 720px){
   .menu-items{ grid-template-columns: 1fr; }
 }
