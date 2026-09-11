@@ -128,44 +128,79 @@
   </div>
 </section>
 
-<!-- ================= MENU HIGHLIGHT ================= -->
+<!-- ================= MENU HIGHLIGHT (PHOTOS) ================= -->
 <section class="section">
   <div class="container">
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;" class="section-head" >
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;" class="section-head">
       <div>
         <span class="eyebrow">Din Meniu</span>
         <h2 style="margin-top:14px;">Câteva dintre preferatele casei</h2>
       </div>
-      <a href="meniu.html" class="btn btn-ghost">Vezi meniul complet ↗</a>
+      <button type="button" class="btn btn-ghost" id="openMenuModal">Vezi meniul complet ↗</button>
     </div>
-    <div class="reveal menu-highlight-grid">
-      <div class="menu-highlight-card">
-        <span class="tag">Cafea</span>
-        <h3>Irish Cappuccino</h3>
-        <p>Cafea Irish Coffee, cremă fină.</p>
-        <p class="price">17 RON</p>
+    <div class="reveal menu-photo-grid">
+      <div class="menu-photo-card">
+        <div class="photo"><img src="images/menu/espresso-lung.jpg" alt="Espresso Lung La Melania și Ayan"></div>
+        <div class="caption">
+          <span class="tag">Cafea</span>
+          <h3>Espresso Lung</h3>
+          <p>Piacetto Tradizionale Caffè Crema 🇮🇹</p>
+          <p class="price">15 RON</p>
+        </div>
       </div>
-      <div class="menu-highlight-card">
-        <span class="tag">Cocktail</span>
-        <h3>Mojito Premium</h3>
-        <p>Rom Bumbu Original, mentă proaspătă, lime.</p>
-        <p class="price">45 RON</p>
+      <div class="menu-photo-card">
+        <div class="photo"><img src="images/menu/cappuccino-arome.jpg" alt="Cappuccino cu Arome La Melania și Ayan"></div>
+        <div class="caption">
+          <span class="tag">Cafea</span>
+          <h3>Cappuccino cu Arome</h3>
+          <p>Cu alune și caramel, la alegere.</p>
+          <p class="price">18 RON</p>
+        </div>
       </div>
-      <div class="menu-highlight-card">
-        <span class="tag">Vin Alb</span>
-        <h3>Hermeziu Chardonnay</h3>
-        <p>Vin alb băricat premium, sec.</p>
-        <p class="price">170 RON</p>
+      <div class="menu-photo-card">
+        <div class="photo"><img src="images/menu/cappuccino-cioco.jpg" alt="Cappuccino Cioco La Melania și Ayan"></div>
+        <div class="caption">
+          <span class="tag">Cafea</span>
+          <h3>Cappuccino Cioco</h3>
+          <p>Marcă băuturi calde: La Festa</p>
+          <p class="price">15 RON</p>
+        </div>
       </div>
-      <div class="menu-highlight-card">
-        <span class="tag">Reci</span>
-        <h3>Ice Coffee Oreo Crunch</h3>
-        <p>Cafea rece cu biscuiți Oreo.</p>
-        <p class="price">23 RON</p>
+      <div class="menu-photo-card">
+        <div class="photo"><img src="images/menu/frappe-oreo.jpg" alt="Frappe Oreo Crunch La Melania și Ayan"></div>
+        <div class="caption">
+          <span class="tag">Reci</span>
+          <h3>Frappe Oreo Crunch</h3>
+          <p>Cafea solubilă, cu biscuiți Oreo.</p>
+          <p class="price">22 RON</p>
+        </div>
       </div>
+    </div>
+    <div style="text-align:center;margin-top:32px;">
+      <button type="button" class="btn btn-primary" id="openMenuModal2">Vezi Meniul Complet</button>
     </div>
   </div>
 </section>
+
+<!-- ================= FULL MENU MODAL ================= -->
+<div class="menu-modal-overlay" id="menuModalOverlay">
+  <div class="menu-modal-panel">
+    <div class="menu-modal-head">
+      <div>
+        <span class="eyebrow">Meniu Complet</span>
+        <h2 style="margin-top:10px;">La Melania &amp; Ayan</h2>
+      </div>
+      <button type="button" class="menu-modal-close" id="closeMenuModal" aria-label="Închide">✕</button>
+    </div>
+    <div class="menu-modal-toolbar">
+      <div class="menu-toolbar" style="margin-bottom:0;">
+        <div class="pill-tabs" id="modalMenuTabs"></div>
+        <div class="menu-search"><input type="text" id="modalMenuSearch" placeholder="Caută în meniu…"></div>
+      </div>
+    </div>
+    <div class="menu-modal-body" id="modalMenuPanel"></div>
+  </div>
+</div>
 
 <!-- ================= GALLERY TEASER ================= -->
 <section class="section section--dark">
@@ -257,6 +292,35 @@
   </div>
 </footer>
 
+<script src="js/menu-data.js"></script>
+<script src="js/menu-render.js"></script>
 <script src="js/main.js"></script>
+<script>
+  (function () {
+    const overlay = document.getElementById("menuModalOverlay");
+    const openBtns = [document.getElementById("openMenuModal"), document.getElementById("openMenuModal2")];
+    const closeBtn = document.getElementById("closeMenuModal");
+    if (!overlay) return;
+
+    function openModal() {
+      overlay.classList.add("is-open");
+      document.body.classList.add("modal-open");
+      initMenuUI({
+        tabsEl: document.getElementById("modalMenuTabs"),
+        panelEl: document.getElementById("modalMenuPanel"),
+        searchEl: document.getElementById("modalMenuSearch"),
+      });
+    }
+    function closeModal() {
+      overlay.classList.remove("is-open");
+      document.body.classList.remove("modal-open");
+    }
+
+    openBtns.forEach((btn) => btn && btn.addEventListener("click", openModal));
+    closeBtn.addEventListener("click", closeModal);
+    overlay.addEventListener("click", (e) => { if (e.target === overlay) closeModal(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+  })();
+</script>
 </body>
 </html>
