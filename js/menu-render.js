@@ -43,7 +43,7 @@ function inferAllergens(item) {
 function renderMenuGroup(group, filterText) {
   const q = (filterText || "").trim().toLowerCase();
   let html = `<div class="menu-group-head">
-    <span class="menu-group-icon">${group.icon}</span>
+    <span class="menu-group-flourish" aria-hidden="true"></span>
     <h2>${group.label}</h2>
     ${group.sub ? `<p class="menu-group-sub">${group.sub}</p>` : ""}
   </div>`;
@@ -102,7 +102,7 @@ function initMenuUI({ tabsEl, panelEl, searchEl }) {
   MENU_GROUPS.forEach((group) => {
     const btn = document.createElement("button");
     btn.className = "pill-tab";
-    btn.textContent = `${group.icon} ${group.label}`;
+    btn.textContent = group.label;
     btn.dataset.id = group.id;
     tabsEl.appendChild(btn);
   });

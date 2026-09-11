@@ -557,13 +557,15 @@ button{ font-family: inherit; cursor:pointer; }
   display:flex; flex-wrap:wrap; gap:10px;
 }
 .pill-tab{
-  padding: 10px 20px;
+  padding: 11px 22px;
   border-radius: var(--radius-pill);
   border: 1px solid var(--cream-line);
   background: var(--paper);
+  font-family: var(--font-body);
   font-size: 13.5px;
   font-weight: 600;
-  color: var(--ink-soft);
+  letter-spacing: .01em;
+  color: var(--cocoa-700);
   transition: all .2s ease;
 }
 .pill-tab:hover{ border-color: var(--gold); color: var(--cocoa-950); }
@@ -661,14 +663,14 @@ button{ font-family: inherit; cursor:pointer; }
   padding-bottom: 22px;
 }
 .menu-group-head:first-child{ margin-top:0; }
-.menu-group-icon{
+.menu-group-flourish{
   display:block;
-  font-size:15px;
-  color: var(--gold-dark);
-  letter-spacing:.3em;
-  margin-bottom: 14px;
+  width:40px;
+  height:1px;
+  background: var(--gold-dark);
+  opacity:.6;
+  margin: 0 auto 18px;
 }
-.menu-group-icon::before, .menu-group-icon::after{ content:"❧"; margin: 0 10px; opacity:.75; }
 .menu-group-head h2{ font-size: clamp(26px,3vw,34px); font-style: italic; }
 .menu-group-sub{ margin-top:8px; font-size:13.5px; color:var(--ink-soft); letter-spacing:.02em; }
 
