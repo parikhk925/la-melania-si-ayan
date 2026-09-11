@@ -68,7 +68,7 @@
 <!-- ================= STORY TEASER ================= -->
 <section class="section">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+    <div class="grid-split">
       <div class="reveal">
         <span class="eyebrow">Povestea Noastră</span>
         <h2 style="font-size:clamp(28px,3.6vw,42px);margin-top:14px;">„Pune suflet în tot ceea ce oferi clienților.”</h2>
@@ -138,38 +138,30 @@
       </div>
       <a href="meniu.html" class="btn btn-ghost">Vezi meniul complet ↗</a>
     </div>
-    <div class="reveal" style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px;">
-      <div style="background:var(--paper);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
-        <div style="padding:26px 22px;">
-          <span class="tag">Cafea</span>
-          <h3 style="font-size:18px;margin-top:14px;">Irish Cappuccino</h3>
-          <p style="color:var(--ink-soft);font-size:14px;margin-top:6px;">Cafea Irish Coffee, cremă fină.</p>
-          <p style="margin-top:16px;font-family:var(--font-display);color:var(--gold-dark);font-size:19px;font-weight:600;">17 RON</p>
-        </div>
+    <div class="reveal menu-highlight-grid">
+      <div class="menu-highlight-card">
+        <span class="tag">Cafea</span>
+        <h3>Irish Cappuccino</h3>
+        <p>Cafea Irish Coffee, cremă fină.</p>
+        <p class="price">17 RON</p>
       </div>
-      <div style="background:var(--paper);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
-        <div style="padding:26px 22px;">
-          <span class="tag">Cocktail</span>
-          <h3 style="font-size:18px;margin-top:14px;">Mojito Premium</h3>
-          <p style="color:var(--ink-soft);font-size:14px;margin-top:6px;">Rom Bumbu Original, mentă proaspătă, lime.</p>
-          <p style="margin-top:16px;font-family:var(--font-display);color:var(--gold-dark);font-size:19px;font-weight:600;">45 RON</p>
-        </div>
+      <div class="menu-highlight-card">
+        <span class="tag">Cocktail</span>
+        <h3>Mojito Premium</h3>
+        <p>Rom Bumbu Original, mentă proaspătă, lime.</p>
+        <p class="price">45 RON</p>
       </div>
-      <div style="background:var(--paper);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
-        <div style="padding:26px 22px;">
-          <span class="tag">Vin Alb</span>
-          <h3 style="font-size:18px;margin-top:14px;">Hermeziu Chardonnay</h3>
-          <p style="color:var(--ink-soft);font-size:14px;margin-top:6px;">Vin alb băricat premium, sec.</p>
-          <p style="margin-top:16px;font-family:var(--font-display);color:var(--gold-dark);font-size:19px;font-weight:600;">170 RON</p>
-        </div>
+      <div class="menu-highlight-card">
+        <span class="tag">Vin Alb</span>
+        <h3>Hermeziu Chardonnay</h3>
+        <p>Vin alb băricat premium, sec.</p>
+        <p class="price">170 RON</p>
       </div>
-      <div style="background:var(--paper);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
-        <div style="padding:26px 22px;">
-          <span class="tag">Reci</span>
-          <h3 style="font-size:18px;margin-top:14px;">Ice Coffee Oreo Crunch</h3>
-          <p style="color:var(--ink-soft);font-size:14px;margin-top:6px;">Cafea rece cu biscuiți Oreo.</p>
-          <p style="margin-top:16px;font-family:var(--font-display);color:var(--gold-dark);font-size:19px;font-weight:600;">23 RON</p>
-        </div>
+      <div class="menu-highlight-card">
+        <span class="tag">Reci</span>
+        <h3>Ice Coffee Oreo Crunch</h3>
+        <p>Cafea rece cu biscuiți Oreo.</p>
+        <p class="price">23 RON</p>
       </div>
     </div>
   </div>
@@ -182,18 +174,18 @@
       <span class="eyebrow">Atmosfera Noastră</span>
       <h2>Un loc mic, cu suflet mare</h2>
     </div>
-    <div class="reveal" style="display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:18px;">
-      <a href="galerie.html" style="grid-row:span 2;border-radius:var(--radius-md);overflow:hidden;">
-        <img src="images/interior-wide.jpg" alt="Interior La Melania și Ayan" style="height:100%;object-fit:cover;">
+    <div class="reveal gallery-teaser-grid">
+      <a href="galerie.html" class="span-2-rows">
+        <img src="images/interior-wide.jpg" alt="Interior La Melania și Ayan">
       </a>
-      <a href="galerie.html" style="border-radius:var(--radius-md);overflow:hidden;">
-        <img src="images/carafa.jpg" alt="Limonadă la dozator" style="height:100%;object-fit:cover;">
+      <a href="galerie.html">
+        <img src="images/carafa.jpg" alt="Limonadă la dozator">
       </a>
-      <a href="galerie.html" style="border-radius:var(--radius-md);overflow:hidden;">
-        <img src="images/storefront.jpg" alt="Terasa La Melania și Ayan" style="height:100%;object-fit:cover;">
+      <a href="galerie.html">
+        <img src="images/storefront.jpg" alt="Terasa La Melania și Ayan">
       </a>
-      <a href="galerie.html" style="grid-column:span 2;border-radius:var(--radius-md);overflow:hidden;">
-        <img src="images/interior-entrance.jpg" alt="Intrare La Melania și Ayan" style="width:100%;object-fit:cover;">
+      <a href="galerie.html" class="span-2-cols">
+        <img src="images/interior-entrance.jpg" alt="Intrare La Melania și Ayan">
       </a>
     </div>
     <div style="text-align:center;margin-top:36px;">
@@ -225,6 +217,7 @@
 </section>
 
 <footer class="site-footer">
+  <span class="footer-watermark">La Melania &amp; Ayan</span>
   <div class="container">
     <div class="footer-grid">
       <div>
