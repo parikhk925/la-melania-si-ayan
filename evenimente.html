@@ -212,6 +212,56 @@
   </div>
 </section>
 
+<!-- ================= DRINK CALCULATOR ================= -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Calculator Băuturi</span>
+      <h2>Câte sticle îți trebuie pentru petrecere?</h2>
+      <p>O estimare rapidă a necesarului de vin, bere și spirtoase, în funcție de numărul de invitați și durata evenimentului.</p>
+    </div>
+    <div class="reveal calc-card">
+      <div>
+        <div class="calc-field">
+          <label for="calcGuests">Persoane care consumă alcool</label>
+          <input type="number" id="calcGuests" min="1" max="500" value="20">
+        </div>
+        <div class="calc-field">
+          <label for="calcHours">Durata petrecerii (ore)</label>
+          <input type="number" id="calcHours" min="1" max="24" value="4">
+        </div>
+        <div class="calc-slider-group">
+          <p>Preferință de consum — ajustează procentele:</p>
+          <div class="calc-slider-row">
+            <label>Vin <span id="calcWineVal">50%</span></label>
+            <input type="range" id="calcWine" min="0" max="100" value="50">
+          </div>
+          <div class="calc-slider-row">
+            <label>Bere <span id="calcBeerVal">30%</span></label>
+            <input type="range" id="calcBeer" min="0" max="100" value="30">
+          </div>
+          <div class="calc-slider-row">
+            <label>Spirtoase <span id="calcSpiritVal">20%</span></label>
+            <input type="range" id="calcSpirit" min="0" max="100" value="20">
+          </div>
+        </div>
+      </div>
+      <div class="calc-results">
+        <h4>Necesar Estimat</h4>
+        <div class="calc-results-grid">
+          <div class="calc-result-item"><strong id="calcOutWine">0</strong><span>sticle de vin</span></div>
+          <div class="calc-result-item"><strong id="calcOutBeer">0</strong><span>sticle de bere</span></div>
+          <div class="calc-result-item"><strong id="calcOutSpirit">0</strong><span>sticle de spirtoase</span></div>
+        </div>
+        <p class="calc-note">Estimare orientativă, pe baza unui consum moderat. Adaptăm oferta exactă discutând direct cu tine.</p>
+        <div class="calc-cta">
+          <a href="#" id="calcOrderBtn" class="btn btn-primary" target="_blank" rel="noopener">💬 Trimite Necesarul pe WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section--tight">
   <div class="container">
     <div class="reveal cta-band">
@@ -271,5 +321,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/drink-calculator.js"></script>
 </body>
 </html>
