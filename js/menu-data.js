@@ -1,0 +1,331 @@
+// Real menu data sourced from the client's digital menu (menoo.eu)
+const MENU_GROUPS = [
+  {
+    id: "cafea",
+    label: "Cafea & Ceai",
+    icon: "☕",
+    subcats: [
+      {
+        name: "Happy Hour 8⁰⁰–12³⁰",
+        note: "Combinații espresso + băutură, cu preț redus în intervalul orar Happy Hour.",
+        items: [
+          { n: "Espresso & Apă Plată/Minerală 500ml", d: "Piacetto Tradizionale Caffè Crema 🇮🇹", p: 19 },
+          { n: "Espresso & Coca-Cola/Fanta/Sprite Doză", d: "Piacetto Tradizionale Caffè Crema 🇮🇹", p: 21 },
+          { n: "Espresso & Hell Energy", d: "Energizantul se servește doar 18+", p: 20 },
+          { n: "Espresso & Limonadă Naturală", d: "Piacetto Tradizionale Caffè Crema 🇮🇹", p: 24 },
+          { n: "Espresso cu Lapte & Apă Plată/Minerală 500ml", d: "Piacetto Tradizionale Caffè Crema 🇮🇹", p: 20 },
+          { n: "Espresso cu Lapte & Coca-Cola/Sprite/Fanta Doză", d: "Piacetto Tradizionale Caffè Crema 🇮🇹", p: 22 },
+          { n: "Espresso cu Lapte & Hell Energy", d: "Energizantul se servește doar 18+", p: 22 },
+          { n: "Espresso cu Lapte & Limonadă Naturală", d: "Piacetto Tradizionale Caffè Crema 🇮🇹", p: 25 },
+        ],
+      },
+      {
+        name: "Cafea & Ceai",
+        items: [
+          { n: "Espresso Scurt", d: "Piacetto Tradizionale Caffè Crema 🇮🇹", p: 15 },
+          { n: "Espresso Lung", d: "Piacetto Tradizionale Caffè Crema 🇮🇹", p: 15 },
+          { n: "Espresso Macchiato", d: "Piacetto Tradizionale Caffè Crema 🇮🇹", p: 15 },
+          { n: "Cafea cu Lapte", d: "Piacetto Tradizionale Caffè Crema 🇮🇹", p: 16 },
+          { n: "Latte Macchiato", d: "Piacetto Tradizionale Caffè Crema 🇮🇹", p: 16 },
+          { n: "Cappuccino", d: "Piacetto Tradizionale Caffè Crema 🇮🇹", p: 17 },
+          { n: "Cappuccino Vienez", d: "Piacetto Tradizionale Caffè Crema 🇮🇹", p: 17 },
+          { n: "Irish Cappuccino", d: "Irish Coffee 🇮🇪", p: 17 },
+          { n: "Latte Macchiato cu Arome", d: "Piacetto Tradizionale Caffè Crema 🇮🇹", p: 18 },
+          { n: "Cappuccino cu Arome", d: "Piacetto Tradizionale Caffè Crema 🇮🇹", p: 18 },
+          { n: "Irish Cappuccino cu Arome", d: "Piacetto Tradizionale Caffè Crema 🇮🇹", p: 18 },
+          { n: "Ceaiuri Fructe", d: "", p: 15 },
+        ],
+      },
+      {
+        name: "Specialități Băuturi Reci Cafea",
+        items: [
+          { n: "Frappe Clasic", d: "Cafea solubilă (Ness)", p: 20 },
+          { n: "Frappe Viva Crunch", d: "Cu Viva Pernițe, sortimente diversificate", p: 22 },
+          { n: "Frappe Oreo Crunch", d: "Cu biscuiți Oreo", p: 22 },
+          { n: "Ice Coffee Clasic", d: "Piacetto Tradizionale Caffè Crema 🇮🇹", p: 20 },
+          { n: "Ice Coffee Viva Crunch", d: "Cu Viva Pernițe diversificate", p: 23 },
+          { n: "Ice Coffee Oreo Crunch", d: "Cu biscuiți Oreo", p: 23 },
+        ],
+      },
+      {
+        name: "Băuturi Calde Instant",
+        note: "Marcă: La Festa",
+        items: [
+          { n: "Ciocolată Caldă", d: "", p: 15 },
+          { n: "Ciocolată Albă", d: "", p: 15 },
+          { n: "Cappuccino Cioco", d: "", p: 15 },
+          { n: "Cappuccino Clasic", d: "", p: 15 },
+          { n: "Ciocolată Caldă Vieneză", d: "", p: 16 },
+          { n: "Ciocolată Caldă Albă Vieneză", d: "", p: 16 },
+          { n: "Cappuccino Vienez", d: "", p: 16 },
+          { n: "Cappuccino Cioco Vienez", d: "", p: 16 },
+        ],
+      },
+    ],
+  },
+  {
+    id: "apa",
+    label: "Apă, Sucuri & Limonade",
+    icon: "🍋",
+    subcats: [
+      {
+        name: "Apă & Sucuri",
+        items: [
+          { n: "Apă Plată Zizin", d: "", p: 15 },
+          { n: "Apă Carbogazoasă Zizin", d: "", p: 15 },
+          { n: "Apă Plată Borsec", d: "", p: 15 },
+          { n: "Apă Carbogazoasă Borsec", d: "", p: 15 },
+          { n: "Apă Plată Borsec Ciob", d: "", p: 20 },
+          { n: "Apă Carbogazoasă Borsec Ciob", d: "", p: 20 },
+          { n: "Apă Carbogazoasă Aqua Carpatica Forte PET", d: "", p: 18 },
+          { n: "Coca-Cola Doză", d: "", p: 16 },
+          { n: "Pepsi Doză", d: "", p: 16 },
+          { n: "Fanta Doză", d: "", p: 16 },
+          { n: "Sprite Doză", d: "", p: 16 },
+          { n: "Pepsi Ciob", d: "", p: 19 },
+          { n: "Coca-Cola Ciob", d: "100% import", p: 19 },
+          { n: "Sprite Ciob", d: "100% import", p: 19 },
+          { n: "Fanta Ciob", d: "100% import", p: 19 },
+          { n: "Pepsi Zero Ciob", d: "100% import", p: 19 },
+          { n: "7up Lemon", d: "100% import", p: 19 },
+          { n: "Timbark Vișine", d: "", p: 16 },
+          { n: "Timbark Zmeură", d: "", p: 16 },
+          { n: "Prigat Kiwi & Pere", d: "", p: 20 },
+          { n: "Prigat Căpșuni & Banane", d: "", p: 20 },
+        ],
+      },
+      {
+        name: "Apă Tonică & Energizante",
+        items: [
+          { n: "Schweppes Kinley", d: "", p: 20 },
+          { n: "Schweppes Mandarin", d: "", p: 19 },
+          { n: "Evervess", d: "", p: 20 },
+          { n: "Fi-Ga Fiori Di Guarana", d: "", p: 23 },
+          { n: "Red Bull Energy", d: "Se servește doar 18+", p: 20 },
+          { n: "Hell Energy", d: "Se servește doar 18+", p: 16 },
+        ],
+      },
+      {
+        name: "Limonade & Smoothie",
+        items: [
+          { n: "Limonadă Naturală Clasică", d: "", p: 20 },
+          { n: "Limonadă Naturală Popping Boba", d: "Bilute Popping Boba, sortimente diversificate", p: 24 },
+          { n: "Smoothie Fruit Mix cu Suc Natural de Mere", d: "Fructe congelate + suc natural de mere", p: 25 },
+          { n: "Smoothie Fruit Mix Popping Boba", d: "Fructe congelate, bilute Popping Boba, suc de mere", p: 27 },
+        ],
+      },
+    ],
+  },
+  {
+    id: "bere",
+    label: "Bere & Cidru",
+    icon: "🍺",
+    subcats: [
+      {
+        name: "Bere & Cidru",
+        items: [
+          { n: "Heineken", d: "", p: 19 },
+          { n: "Amstel Beer", d: "", p: 18 },
+          { n: "Birra Moretti", d: "", p: 16 },
+          { n: "Birra Moretti Draught", d: "", p: 17 },
+          { n: "Ciucaș Sticlă", d: "", p: 16 },
+          { n: "Strongbow Fructe de Pădure", d: "", p: 18 },
+        ],
+      },
+      {
+        name: "Bere Premium & Import",
+        items: [
+          { n: "Saint Omer", d: "100% import Franța", p: 30 },
+          { n: "Kronenbourg Blondă 1664", d: "100% import Franța", p: 32 },
+          { n: "Alhambra Reserva 1925", d: "Blondă, 100% import Spania", p: 32 },
+          { n: "Alhambra Lager Singular", d: "Blondă, 100% import Spania", p: 32 },
+          { n: "Cruzcampo Especial", d: "Blondă lager, 100% import Spania", p: 32 },
+          { n: "Grolsch Lager", d: "Blondă lager, 100% import Olanda", p: 32 },
+          { n: "Warsteiner Premium", d: "Blondă, 100% import Germania", p: 32 },
+          { n: "Modelo Especial", d: "Blondă, 100% import Mexic", p: 32 },
+          { n: "Red Stripe Lager", d: "Blondă, 100% import Jamaica", p: 32 },
+        ],
+      },
+    ],
+  },
+  {
+    id: "vinuri",
+    label: "Vinuri",
+    icon: "🍷",
+    subcats: [
+      {
+        name: "Crama Hermeziu 🇷🇴",
+        items: [
+          { n: "Vin Pétillant Alb Madame Blue", d: "Spumant demisec", p: 160 },
+          { n: "Vin Pétillant Rosé Mademoiselle", d: "Spumant demisec", p: 160 },
+          { n: "Vin Scrisori Cuvée Alb", d: "Băricat sec", p: 160 },
+          { n: "Vin Scrisori Cuvée Rosé", d: "Băricat sec", p: 160 },
+          { n: "Vin Hermeziu Chardonnay", d: "Alb băricat premium, sec", p: 170 },
+          { n: "Vin Hermeziu Sauvignon Blanc", d: "Alb băricat premium, sec", p: 170 },
+          { n: "Vin Hermeziu Traminer", d: "Alb băricat premium, demisec", p: 170 },
+          { n: "Vin Moșanca Alb", d: "2025, sec", p: 140 },
+          { n: "Vin Moșanca Rosé", d: "2024, sec", p: 140 },
+          { n: "Vin Răvașe Chardonnay", d: "Alb demisec", p: 140 },
+          { n: "Vin Răvașe Sauvignon Blanc", d: "Alb demisec", p: 140 },
+          { n: "Vin Răvașe Traminer", d: "Alb demisec", p: 140 },
+          { n: "Vin Hruba Boierului Fetească Regală", d: "Alb demisec", p: 140 },
+          { n: "Vin C'est Soir Traminer Rosé", d: "Băricat premium, demisec", p: 170 },
+          { n: "Vin C'est Soir Busuioacă de Bohotin Rosé", d: "Băricat premium, sec", p: 170 },
+          { n: "Vinul Casei Carafă Traminer", d: "Alb D.O.C.", p: 65 },
+          { n: "Vinul Casei Carafă Chardonnay", d: "Alb D.O.C.", p: 65 },
+          { n: "Vinul Casei Carafă Fetească Regală", d: "Alb D.O.C.", p: 65 },
+          { n: "Vinul Casei Carafă Rosé", d: "Rosé D.O.C.", p: 65 },
+        ],
+      },
+      {
+        name: "Crama Ostrov 🇷🇴",
+        items: [
+          { n: "Vin Noe Dry Muscat", d: "Alb sec, I.G. Terasele Dunării", p: 140 },
+          { n: "Vin Naiada Chardonnay", d: "Alb sec, D.O.C. Oltina", p: 140 },
+          { n: "Vin Naiada Sauvignon Blanc", d: "Alb sec, D.O.C. Oltina", p: 140 },
+          { n: "Vin Naiada Crâmpoșie", d: "Alb sec, I.G. Terasele Dunării", p: 140 },
+          { n: "Vin Naiada Cuvée Rosé", d: "Sec, cupaj Pinot Noir & Fetească Neagră", p: 140 },
+          { n: "Vin Naiada Fetească Neagră", d: "Roșu sec, D.O.C. Oltina", p: 140 },
+          { n: "Vin Naiada Syrah", d: "Roșu sec, D.O.C. Oltina", p: 140 },
+          { n: "Vinul Casei Carafă Sauvignon Blanc", d: "Alb demisec, I.G.", p: 65 },
+          { n: "Vinul Casei Carafă Chardonnay", d: "Alb demisec, I.G.", p: 65 },
+        ],
+      },
+      {
+        name: "Crama Sarica Niculițel",
+        items: [
+          { n: "Vin 1958 Sauvignon Blanc & Fetească Albă", d: "Alb demisec", p: 70 },
+          { n: "Vin 1958 Cuvée Rosé", d: "Rosé demisec", p: 70 },
+        ],
+      },
+    ],
+  },
+  {
+    id: "spirtoase",
+    label: "Spirtoase Premium",
+    icon: "🥃",
+    subcats: [
+      {
+        name: "Single Malt Scotch Whisky",
+        items: [{ n: "Glenfiddich 12 Ani", d: "", p: 37.5 }],
+      },
+      {
+        name: "Blended Scotch Whisky",
+        items: [
+          { n: "Dimple Golden Selection", d: "", p: 35 },
+          { n: "Johnnie Walker Black Label 12 Ani", d: "", p: 35 },
+        ],
+      },
+      {
+        name: "Tennessee Whisky",
+        items: [
+          { n: "Jack Daniel's", d: "", p: 32.5 },
+          { n: "Jack Daniel's Single Barrel", d: "", p: 37.5 },
+          { n: "Jack Daniel's Gentleman Jack", d: "", p: 35 },
+        ],
+      },
+      {
+        name: "Rom",
+        items: [
+          { n: "Bumbu Original 40%", d: "100% import 🇦🇬", p: 35 },
+          { n: "Don Papa GBX 40%", d: "100% import 🇵🇭", p: 37.5 },
+        ],
+      },
+      {
+        name: "Brandy",
+        items: [
+          { n: "Alexandrion 9*", d: "", p: 22.5 },
+          { n: "Jidvei V.S.O.P", d: "", p: 19.5 },
+          { n: "Vecchia Romagna", d: "", p: 19 },
+          { n: "Alexandrion 5*", d: "", p: 16.5 },
+          { n: "Cava D'oro", d: "", p: 14 },
+        ],
+      },
+      {
+        name: "Vodka",
+        items: [
+          { n: "Finlandia", d: "", p: 16 },
+          { n: "Stalinskaya", d: "", p: 15 },
+        ],
+      },
+      {
+        name: "Tequila",
+        items: [
+          { n: "Salitos Silver 38%", d: "100% import Mexic", p: 28 },
+          { n: "Salitos Gold 38%", d: "100% import Mexic", p: 28 },
+        ],
+      },
+      {
+        name: "Gin",
+        items: [
+          { n: "Beefeater", d: "", p: 28 },
+          { n: "Gilman's", d: "", p: 27 },
+        ],
+      },
+      {
+        name: "Aperitive & Vermuturi",
+        items: [{ n: "Bitter Carpaten", d: "", p: 15 }],
+      },
+    ],
+  },
+  {
+    id: "cocktailuri",
+    label: "Cocktailuri",
+    icon: "🍹",
+    subcats: [
+      {
+        name: "Long Drinks & Specialități",
+        items: [
+          { n: "Gin Tonic", d: "50ml gin · 150ml apă tonică · gheață · lămâie/lime", p: 40 },
+          { n: "Mojito Premium", d: "50ml rom Bumbu Original · mentă proaspătă · lime · zahăr brun", p: 45 },
+          { n: "Cuba Libre Premium", d: "50ml rom Bumbu/Don Papa · Coca-Cola · lămâie/lime", p: 45 },
+          { n: "Tequila Beer Bomb ~ Submarino", d: "40ml tequila Salitos · 330ml bere blondă", p: 35 },
+          { n: "Ice Tea Punch 0% Alcool", d: "Ceai rece · suc natural de mere · mix fructe congelate", p: 35 },
+          { n: "Ice Tea Punch Rom", d: "40ml rom · ceai rece · suc de mere · fructe congelate", p: 40 },
+          { n: "Ice Tea Punch Tequila", d: "40ml tequila · ceai rece · suc de mere · fructe congelate", p: 40 },
+          { n: "Ice Tea Punch Vodka", d: "40ml vodka · ceai rece · suc de mere · fructe congelate", p: 40 },
+          { n: "Sangria Punch Ice", d: "150ml vin roșu · suc de mere · 40ml brandy · fructe congelate", p: 40 },
+        ],
+      },
+    ],
+  },
+  {
+    id: "gustari",
+    label: "Gustări & Aperitive",
+    icon: "🥜",
+    subcats: [
+      {
+        name: "Snack-uri, Gustări & Aperitive Reci",
+        items: [
+          { n: "Fistic Prăjit și Sărat", d: "", p: 40 },
+          { n: "Arahide Prăjite și Sărate", d: "", p: 32 },
+          { n: "Popcorn Sare", d: "", p: 27 },
+          { n: "Popcorn Unt", d: "", p: 27 },
+          { n: "Popcorn Cașcaval/Brânză", d: "", p: 27 },
+          { n: "Sărățele cu Cașcaval", d: "", p: 27 },
+          { n: "Măsline Negre Sărate", d: "", p: 25 },
+        ],
+      },
+    ],
+  },
+  {
+    id: "diverse",
+    label: "Diverse & Extra",
+    icon: "🎲",
+    subcats: [
+      {
+        name: "Diverse & Extra",
+        items: [
+          { n: "Lămâi Feliate", d: "", p: 13 },
+          { n: "Portocale Feliate", d: "", p: 13 },
+          { n: "Gheață Frapieră Mică", d: "", p: 13 },
+          { n: "Lapte Condensat Cafea", d: "", p: 11 },
+          { n: "Lapte UHT Cafea", d: "", p: 11 },
+          { n: "Miere Plicuri Poliflora", d: "", p: 12 },
+          { n: "Sifon Românesc", d: "", p: 20 },
+          { n: "Jocuri de Societate", d: "Rummy, table, șah, jocuri de cărți — 20 lei/persoană/oră", p: 20 },
+        ],
+      },
+    ],
+  },
+];
