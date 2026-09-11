@@ -57,6 +57,14 @@
   </div>
 </header>
 
+<!-- ================= MARQUEE ================= -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Cafea De Specialitate</span><span>Vinuri Românești</span><span>Bar De Cartier</span><span>Seri De Jocuri</span>
+    <span>Cafea De Specialitate</span><span>Vinuri Românești</span><span>Bar De Cartier</span><span>Seri De Jocuri</span>
+  </div>
+</div>
+
 <!-- ================= STORY TEASER ================= -->
 <section class="section">
   <div class="container">
@@ -69,6 +77,11 @@
           să-ți faci prieteni noi și să descoperi mereu câte o surpriză plăcută — de la vitrina cu băuturi reci, până la o seară de jocuri
           de societate cu cei dragi.
         </p>
+        <div class="counter-row">
+          <div class="counter-item"><strong data-count="154">0</strong><span>băuturi &amp; produse</span></div>
+          <div class="counter-item"><strong data-count="3">0</strong><span>crame românești</span></div>
+          <div class="counter-item"><strong data-count="7" data-suffix="/7">0</strong><span>zile deschis</span></div>
+        </div>
         <a href="despre.html" class="btn btn-ghost" style="margin-top:28px;">Descoperă povestea completă</a>
       </div>
       <div class="reveal" style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);">
@@ -78,7 +91,7 @@
   </div>
 </section>
 
-<!-- ================= PILLARS ================= -->
+<!-- ================= FEATURE CARDS ================= -->
 <section class="section section--cream">
   <div class="container">
     <div class="section-head center">
@@ -86,21 +99,30 @@
       <h2>O locație cu un vibe aparte</h2>
       <p>Nu suntem doar o cafenea. Suntem locul din Videle unde fiecare vizită are o notă personală.</p>
     </div>
-    <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;">
-      <div style="background:var(--paper);border-radius:var(--radius-md);padding:32px 28px;box-shadow:var(--shadow-sm);">
-        <div style="font-size:28px;">☕</div>
-        <h3 style="font-size:19px;margin-top:16px;">Cafea Piacetto Italia</h3>
-        <p style="margin-top:10px;color:var(--ink-soft);font-size:15px;">Espresso, cappuccino și frappe preparate cu boabe Piacetto Tradizionale Caffè Crema, 100% import.</p>
+    <div class="reveal feature-grid">
+      <div class="feature-card">
+        <img src="images/espresso-cup.jpg" alt="Cafea Piacetto la La Melania și Ayan">
+        <div class="feature-card-body">
+          <span class="feature-card-num">01 — Cafea</span>
+          <h3>Cafea Piacetto Italia</h3>
+          <p>Espresso, cappuccino și frappe preparate cu boabe Piacetto Tradizionale Caffè Crema, 100% import.</p>
+        </div>
       </div>
-      <div style="background:var(--paper);border-radius:var(--radius-md);padding:32px 28px;box-shadow:var(--shadow-sm);">
-        <div style="font-size:28px;">🍷</div>
-        <h3 style="font-size:19px;margin-top:16px;">Vinuri Românești Alese</h3>
-        <p style="margin-top:10px;color:var(--ink-soft);font-size:15px;">Selecție de la cramele Hermeziu, Ostrov și Sarica Niculițel, alături de o gamă generoasă de spirtoase premium.</p>
+      <div class="feature-card">
+        <img src="images/carafa.jpg" alt="Băuturi reci și limonadă la La Melania și Ayan">
+        <div class="feature-card-body">
+          <span class="feature-card-num">02 — Vinuri &amp; Bar</span>
+          <h3>Vinuri Românești Alese</h3>
+          <p>Selecție de la cramele Hermeziu, Ostrov și Sarica Niculițel, alături de spirtoase premium și cocktailuri.</p>
+        </div>
       </div>
-      <div style="background:var(--paper);border-radius:var(--radius-md);padding:32px 28px;box-shadow:var(--shadow-sm);">
-        <div style="font-size:28px;">🎲</div>
-        <h3 style="font-size:19px;margin-top:16px;">Seri De Socializare</h3>
-        <p style="margin-top:10px;color:var(--ink-soft);font-size:15px;">Rummy, table, șah și jocuri de cărți — vino cu prietenii și transformă orice seară într-una memorabilă.</p>
+      <div class="feature-card">
+        <img src="images/interior-tables.jpg" alt="Zona de mese și socializare la La Melania și Ayan">
+        <div class="feature-card-body">
+          <span class="feature-card-num">03 — Socializare</span>
+          <h3>Seri De Socializare</h3>
+          <p>Rummy, table, șah și jocuri de cărți — vino cu prietenii și transformă orice seară într-una memorabilă.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -180,16 +202,24 @@
   </div>
 </section>
 
-<!-- ================= CTA STRIP ================= -->
+<!-- ================= WHATSAPP RESERVATION CTA ================= -->
 <section class="section--tight">
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;border-top:1px solid var(--cream-line);border-bottom:1px solid var(--cream-line);padding:40px 0;">
-    <div>
-      <h3 style="font-size:26px;">Te așteptăm la o masă bună.</h3>
-      <p style="color:var(--ink-soft);margin-top:8px;">Strada Băncii nr. 4, Videle · Deschis zilnic</p>
-    </div>
-    <div style="display:flex;gap:14px;flex-wrap:wrap;">
-      <a href="tel:+40751778967" class="btn btn-ghost">📞 +40 751 778 967</a>
-      <a href="contact.html" class="btn btn-primary">Rezervă acum</a>
+  <div class="container">
+    <div class="reveal cta-band">
+      <div class="cta-band-info">
+        <span class="eyebrow" style="color:var(--gold-soft);">Rezervări</span>
+        <h3 style="margin-top:12px;">Masa ta te așteaptă.</h3>
+        <p>Scrie-ne pe WhatsApp sau sună direct — îți păstrăm locul preferat pentru orice ocazie.</p>
+        <div class="cta-hours">
+          <div><strong>Deschis Zilnic</strong>Luni – Duminică</div>
+          <div><strong>Videle</strong>Str. Băncii nr. 4</div>
+          <div><strong>Ambianță</strong>Cafenea · Bar de vinuri · Bar</div>
+        </div>
+      </div>
+      <div class="cta-band-actions">
+        <a href="https://wa.me/40751778967?text=Bună%2C%20aș%20dori%20să%20rezerv%20o%20masă%20la%20La%20Melania%20și%20Ayan." class="btn btn-whatsapp" target="_blank" rel="noopener">💬 Rezervă pe WhatsApp</a>
+        <a href="tel:+40751778967" class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.4)">📞 +40 751 778 967</a>
+      </div>
     </div>
   </div>
 </section>
