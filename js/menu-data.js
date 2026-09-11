@@ -4,6 +4,7 @@ const MENU_GROUPS = [
     id: "cafea",
     label: "Cafea & Ceai",
     icon: "☕",
+    sub: "Preparată cu boabe Piacetto Tradizionale Caffè Crema",
     subcats: [
       {
         name: "Happy Hour 8⁰⁰–12³⁰",
@@ -67,6 +68,7 @@ const MENU_GROUPS = [
     id: "apa",
     label: "Apă, Sucuri & Limonade",
     icon: "🍋",
+    sub: "Reci și proaspete, direct din vitrină",
     subcats: [
       {
         name: "Apă & Sucuri",
@@ -120,6 +122,7 @@ const MENU_GROUPS = [
     id: "bere",
     label: "Bere & Cidru",
     icon: "🍺",
+    sub: "De la clasice la sortimente premium de import",
     subcats: [
       {
         name: "Bere & Cidru",
@@ -152,6 +155,7 @@ const MENU_GROUPS = [
     id: "vinuri",
     label: "Vinuri",
     icon: "🍷",
+    sub: "Selecție de la trei crame românești",
     subcats: [
       {
         name: "Crama Hermeziu 🇷🇴",
@@ -204,6 +208,7 @@ const MENU_GROUPS = [
     id: "spirtoase",
     label: "Spirtoase Premium",
     icon: "🥃",
+    sub: "Whisky, rom, brandy și alte etichete alese",
     subcats: [
       {
         name: "Single Malt Scotch Whisky",
@@ -272,6 +277,7 @@ const MENU_GROUPS = [
     id: "cocktailuri",
     label: "Cocktailuri",
     icon: "🍹",
+    sub: "Amestecuri de casă, cu și fără alcool",
     subcats: [
       {
         name: "Long Drinks & Specialități",
@@ -293,6 +299,7 @@ const MENU_GROUPS = [
     id: "gustari",
     label: "Gustări & Aperitive",
     icon: "🥜",
+    sub: "Perfecte alături de o bere sau un pahar de vin",
     subcats: [
       {
         name: "Snack-uri, Gustări & Aperitive Reci",
@@ -312,6 +319,7 @@ const MENU_GROUPS = [
     id: "diverse",
     label: "Diverse & Extra",
     icon: "🎲",
+    sub: "Mici extra-uri și seri de jocuri de societate",
     subcats: [
       {
         name: "Diverse & Extra",

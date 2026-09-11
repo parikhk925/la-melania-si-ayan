@@ -42,7 +42,11 @@ function inferAllergens(item) {
 
 function renderMenuGroup(group, filterText) {
   const q = (filterText || "").trim().toLowerCase();
-  let html = `<div class="menu-group-head"><span class="menu-group-icon">${group.icon}</span><h2>${group.label}</h2></div>`;
+  let html = `<div class="menu-group-head">
+    <span class="menu-group-icon">${group.icon}</span>
+    <h2>${group.label}</h2>
+    ${group.sub ? `<p class="menu-group-sub">${group.sub}</p>` : ""}
+  </div>`;
   let anyItems = false;
 
   group.subcats.forEach((sub) => {
@@ -63,13 +67,7 @@ function renderMenuGroup(group, filterText) {
             <div class="menu-item-main">
               <span class="menu-item-name">${it.n}</span>
               ${it.d ? `<span class="menu-item-desc">${it.d}</span>` : ""}
-              ${
-                allergens.length
-                  ? `<span class="menu-item-allergens">${allergens
-                      .map((a) => `<span class="allergen-tag">${a}</span>`)
-                      .join("")}</span>`
-                  : ""
-              }
+              ${allergens.length ? `<span class="menu-item-allergens">Conține: ${allergens.join(", ")}</span>` : ""}
             </div>
           </div>`;
           })

@@ -143,7 +143,7 @@
         <span class="eyebrow">Din Meniu</span>
         <h2 style="margin-top:14px;">Câteva dintre preferatele casei</h2>
       </div>
-      <button type="button" class="btn btn-ghost" id="openMenuModal">Vezi meniul complet ↗</button>
+      <a href="meniu.html" class="btn btn-ghost">Vezi meniul complet ↗</a>
     </div>
     <div class="reveal menu-photo-grid">
       <div class="menu-photo-card">
@@ -184,30 +184,10 @@
       </div>
     </div>
     <div style="text-align:center;margin-top:32px;">
-      <button type="button" class="btn btn-primary" id="openMenuModal2">Vezi Meniul Complet</button>
+      <a href="meniu.html" class="btn btn-primary">Vezi Meniul Complet</a>
     </div>
   </div>
 </section>
-
-<!-- ================= FULL MENU MODAL ================= -->
-<div class="menu-modal-overlay" id="menuModalOverlay">
-  <div class="menu-modal-panel">
-    <div class="menu-modal-head">
-      <div>
-        <span class="eyebrow">Meniu Complet</span>
-        <h2 style="margin-top:10px;">La Melania &amp; Ayan</h2>
-      </div>
-      <button type="button" class="menu-modal-close" id="closeMenuModal" aria-label="Închide">✕</button>
-    </div>
-    <div class="menu-modal-toolbar">
-      <div class="menu-toolbar" style="margin-bottom:0;">
-        <div class="pill-tabs" id="modalMenuTabs"></div>
-        <div class="menu-search"><input type="text" id="modalMenuSearch" placeholder="Caută în meniu…"></div>
-      </div>
-    </div>
-    <div class="menu-modal-body" id="modalMenuPanel"></div>
-  </div>
-</div>
 
 <!-- ================= GALLERY TEASER ================= -->
 <section class="section section--dark">
@@ -299,35 +279,6 @@
   </div>
 </footer>
 
-<script src="js/menu-data.js"></script>
-<script src="js/menu-render.js"></script>
 <script src="js/main.js"></script>
-<script>
-  (function () {
-    const overlay = document.getElementById("menuModalOverlay");
-    const openBtns = [document.getElementById("openMenuModal"), document.getElementById("openMenuModal2")];
-    const closeBtn = document.getElementById("closeMenuModal");
-    if (!overlay) return;
-
-    function openModal() {
-      overlay.classList.add("is-open");
-      document.body.classList.add("modal-open");
-      initMenuUI({
-        tabsEl: document.getElementById("modalMenuTabs"),
-        panelEl: document.getElementById("modalMenuPanel"),
-        searchEl: document.getElementById("modalMenuSearch"),
-      });
-    }
-    function closeModal() {
-      overlay.classList.remove("is-open");
-      document.body.classList.remove("modal-open");
-    }
-
-    openBtns.forEach((btn) => btn && btn.addEventListener("click", openModal));
-    closeBtn.addEventListener("click", closeModal);
-    overlay.addEventListener("click", (e) => { if (e.target === overlay) closeModal(); });
-    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
-  })();
-</script>
 </body>
 </html>
